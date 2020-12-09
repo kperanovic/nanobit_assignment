@@ -16,6 +16,22 @@ kubectl apply -f k8s/web-service.yaml
 kubectl apply -f k8s/worker-deployment.yaml
 ```
 
+# Nomad deployment
+If nomad is installed on a remote machine set:
+```bash
+export NOMAD_ADDR="NOMAD REMOTE ADDRESS"
+```
+
+Validate nomad jobs by running:
+```bash
+nomad validate /deplyoments/nomad/redis/redis.nomad
+```
+
+Run the job with the command:
+```bash
+nomad run /deployments/nomad/redis/redis.nomad
+```
+
 ## Usage
 To connect to the websocket server use the following command:
 ```bash
